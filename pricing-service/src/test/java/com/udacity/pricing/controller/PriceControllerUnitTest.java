@@ -26,7 +26,7 @@ public class PriceControllerUnitTest {
 
     @Test
     public void getPrice() throws Exception {
-        mockMvc.perform(get("/services/price"))
+        mockMvc.perform(get("/services/price?vehicleId=1"))
                 .andExpect(status().isOk());
         verify(pricingService, times(1)).getPrice(1l);
     }

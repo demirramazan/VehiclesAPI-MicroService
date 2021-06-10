@@ -44,6 +44,7 @@ public class CarService {
 
         Car car = repository.findById(id)
                 .orElseThrow(CarNotFoundException::new);
+
         String price = priceClient.getPrice(car.getId());
         car.setPrice(price);
 
